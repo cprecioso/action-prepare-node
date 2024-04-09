@@ -5,16 +5,11 @@ runs:
   using: composite
 
   steps:
-    - uses: actions/setup-node@v4
-      with:
-        node-version-file: ".node-version"
-
+    # @TODO https://github.com/actions/setup-node/issues/531
+    # Once `setup-node` supports corepack, we can do this a single step
     - run: corepack enable
       shell: bash
 
-    # We re-run so the cache can use the corepack-ed `yarn`
-    # @TODO https://github.com/actions/setup-node/issues/531
-    # Once `setup-node` supports corepack, we can do this a single step
     - uses: actions/setup-node@v4
       with:
         node-version-file: ".node-version"
