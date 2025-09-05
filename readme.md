@@ -8,6 +8,7 @@ speeding up following runs.
 - Use a
   [`.node-version` file](https://github.com/shadowspawn/node-version-usage)
 - Use yarn 2+
+- Use `package.json#packageManager`
 
 ## Usage
 
